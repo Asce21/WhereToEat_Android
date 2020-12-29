@@ -1,0 +1,76 @@
+package com.example.wheretoeat;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainMenuActivity extends Activity {
+    //Class Variables. RARELY initialize here
+    Intent intent;
+    String usernamePassed;
+    Button btnViewList;
+    Button btnChooseRestaurant;
+    Button btnAddRestaurant;
+    Button btnRandomNumber;
+    SQLiteDatabase wteDatabase;
+    Cursor cursor;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_menu);
+
+        //Variable Initializations
+        wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
+        intent = getIntent();
+        usernamePassed = intent.getStringExtra("username");
+        btnViewList = (Button) findViewById(R.id.btn_view_list);
+        btnChooseRestaurant = (Button) findViewById(R.id.btn_choose_restaurant);
+        btnAddRestaurant = (Button) findViewById(R.id.btn_add);
+        btnRandomNumber = (Button) findViewById(R.id.btn_random_number);
+
+        btnViewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainMenuActivity.this, RestaurantListActivity.class);
+                intent.putExtra("username", usernamePassed);
+                startActivity(intent);
+            }//End of method onClick
+        });//End of btnViewList.setOnClickListener
+
+        btnChooseRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainMenuActivity.this, ChooseRestaurantActivity.class);
+                intent.putExtra("username", usernamePassed);
+                startActivity(intent);
+            }//End of method onClick
+        });//End of btnChooseRestaurant.setOnClickListener
+
+        btnAddRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainMenuActivity.this, AddRestaurantActivity.class);
+                startActivity(intent);
+            }//End of method onClick
+        });//End of btnAddRestaurant.setOnClickListener
+
+        btnRandomNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(MainMenuActivity.this, RangeActivity.class);
+                intent.putExtra("username", usernamePassed);
+                startActivity(intent);
+            }//End of method onClick
+        });//End of btnRandomNumber.setOnClickListener
+
+    }//End of method onCreate
+
+}//End of MainMenuActivity
