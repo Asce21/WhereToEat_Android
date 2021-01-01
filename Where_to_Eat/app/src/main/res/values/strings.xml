@@ -13,7 +13,7 @@
     <string name="addRestaurant">Add A Restaurant</string>
     <string name="restaurant_choice">Choose A Restaurant</string>
     <string name="edit_restaurant">Edit Restaurant Details</string>
-    <string name="random_number">Generate A Random Number</string>
+    <string name="random_number">Generated Number</string>
     <string name="name">Name</string>
     <string name="days_open">Days Open</string>
     <string name="hours_open">Operating Hours</string>

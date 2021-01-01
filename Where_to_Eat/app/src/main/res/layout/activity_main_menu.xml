@@ -21,7 +21,7 @@
 
     <Button
         android:id="@+id/btn_add"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="16dp"
@@ -62,7 +62,7 @@
 
     <Button
         android:id="@+id/btn_view_list"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="64dp"
@@ -74,7 +74,7 @@
 
     <Button
         android:id="@+id/btn_choose_restaurant"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="16dp"
@@ -86,7 +86,7 @@
 
     <Button
         android:id="@+id/btn_random_number"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
         android:layout_marginTop="16dp"

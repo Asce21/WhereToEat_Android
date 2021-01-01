@@ -1,0 +1,6 @@
+changes_2021-01-01
+
+activity_random_number
+o Added a gravity attribute to the random number textview to 
+o Changed the value of the string random_number to "Generated Number"
+

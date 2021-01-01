@@ -30,7 +30,7 @@ public class ChooseRestaurantActivity extends Activity {
         setContentView(R.layout.activity_choose_restaurant);
 
         //Variable Initializations
-        wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
+        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
         cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants;", null);
         goTo = (TextView) findViewById(R.id.tv_go_to);
         intent = getIntent();

@@ -53,7 +53,7 @@ public class RestaurantListActivity extends Activity implements RestaurantListFr
         setContentView(R.layout.activity_restaurant_list);
 
         //Variable Initializations
-        wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
+        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
         intent = getIntent();
         username = intent.getStringExtra("username");
         restaurantNames = new ArrayList<>();
@@ -76,7 +76,6 @@ public class RestaurantListActivity extends Activity implements RestaurantListFr
         btnURL = (Button) findViewById(R.id.btn_url);
         bundle = new Bundle();
         listFragment = new Fragment();
-        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
 
 
 
@@ -115,7 +114,7 @@ public class RestaurantListActivity extends Activity implements RestaurantListFr
     protected void onStart() {
         super.onStart();
 
-        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
+        //SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
         orientation = getResources().getConfiguration().orientation;
         manager = new FragmentActivity().getSupportFragmentManager();
         if (orientation == Configuration.ORIENTATION_PORTRAIT)  {
@@ -158,6 +157,8 @@ public class RestaurantListActivity extends Activity implements RestaurantListFr
         meals += cursor.getInt(14) == 1? "Dinner\n" : "";
         mealsServed.setText(meals);
     }//End of method onItemSelected
+
+
 
 
 }//End of class RestaurantListActivity

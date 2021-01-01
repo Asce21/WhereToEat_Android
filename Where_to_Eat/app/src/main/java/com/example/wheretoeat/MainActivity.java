@@ -27,13 +27,15 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Create a database to hold the tables
-        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
-        wteDatabase.execSQL("CREATE TABLE IF NOT EXISTS Users(Username VARCHAR, Password VARCHAR, Email VARCHAR, Phone VARCHAR);");
+        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
+        //wteDatabase.execSQL("CREATE TABLE IF NOT EXISTS Users(Username VARCHAR, Password VARCHAR, Email VARCHAR, Phone VARCHAR);");
         wteDatabase.execSQL("CREATE TABLE IF NOT EXISTS Restaurants(Name VARCHAR, DaysOne VARCHAR, DaysTwo VARCHAR, HoursOne VARCHAR, HoursTwo VARCHAR, AddressOne VARCHAR, AddressTwo VARCHAR, City VARCHAR, State VARCHAR, ZipCode VARCHAR, Phone VARCHAR, Website VARCHAR, Breakfast INTEGER, Lunch INTEGER, Dinner INTEGER, CONSTRAINT restaurants_pk PRIMARY KEY (name, AddressOne, ZipCode));");
+        /*
         cursor = wteDatabase.rawQuery("SELECT * FROM Users;", null);
         if (cursor.getCount() == 0) {
             wteDatabase.execSQL("INSERT INTO Users VALUES('admin', 'admin', 'amulkey21@yahoo.com', '714-552-2152');");
         }//End of if statement to initially populate the table Users
+         */
 
         cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants;", null);
         if (cursor.getCount() == 0) {

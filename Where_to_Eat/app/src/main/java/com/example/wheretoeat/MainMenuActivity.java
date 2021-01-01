@@ -28,7 +28,7 @@ public class MainMenuActivity extends Activity {
         setContentView(R.layout.activity_main_menu);
 
         //Variable Initializations
-        wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
+        SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
         intent = getIntent();
         usernamePassed = intent.getStringExtra("username");
         btnViewList = (Button) findViewById(R.id.btn_view_list);

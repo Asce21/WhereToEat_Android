@@ -29,6 +29,7 @@
         android:layout_marginBottom="356dp"
         android:text="@string/randomNumber"
         android:textSize="20sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
