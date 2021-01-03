@@ -1,7 +1,5 @@
 package com.example.wheretoeat;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainMenuActivity extends Activity {
     //Class Variables. RARELY initialize here
@@ -33,7 +30,7 @@ public class MainMenuActivity extends Activity {
         usernamePassed = intent.getStringExtra("username");
         btnViewList = (Button) findViewById(R.id.btn_view_list);
         btnChooseRestaurant = (Button) findViewById(R.id.btn_choose_restaurant);
-        btnAddRestaurant = (Button) findViewById(R.id.btn_add);
+        btnAddRestaurant = (Button) findViewById(R.id.btn_add_restauraunt);
         btnRandomNumber = (Button) findViewById(R.id.btn_random_number);
 
         btnViewList.setOnClickListener(new View.OnClickListener() {
