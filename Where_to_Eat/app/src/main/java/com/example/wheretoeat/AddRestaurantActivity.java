@@ -18,7 +18,7 @@ public class AddRestaurantActivity extends Activity {
     Cursor cursor;
     Intent intent;
     String usernamePassed, sqlStatement;
-    EditText etName, etDaysOne, etDaysTwo, etHoursOne, etHoursTwo, etAddressOne, etAddressTwo, etCity, etState, etZip, etURL, etPhone;
+    EditText etRestauantName, etDaysOne, etDaysTwo, etHoursOne, etHoursTwo, etAddressOne, etAddressTwo, etCity, etState, etZip, etURL, etPhone;
     Button btnSubmit;
 
 
@@ -31,7 +31,7 @@ public class AddRestaurantActivity extends Activity {
         SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
         intent = getIntent();
         usernamePassed = intent.getStringExtra("username");
-        etName = (EditText) findViewById(R.id.et_name);
+        etRestauantName = (EditText) findViewById(R.id.et_restaurant_name);
         etDaysOne = (EditText) findViewById(R.id.et_days_one);
         etDaysTwo = (EditText) findViewById(R.id.et_days_two);
         etHoursOne = (EditText) findViewById(R.id.et_hours_one);
@@ -48,14 +48,14 @@ public class AddRestaurantActivity extends Activity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v)    {
-                cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants WHERE Name = " + etName.getText().toString() + " AND AddressOne = " + etAddressOne.getText().toString() + " AND ;", null);
+                cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants WHERE Name = " + etRestauantName.getText().toString() + " AND AddressOne = " + etAddressOne.getText().toString() + " AND ;", null);
                 if (cursor.getCount() > 0)  {
                     Toast.makeText(getApplicationContext(), "Restaurant already exists", Toast.LENGTH_SHORT).show();
                 }//End of if statement reached when the restaurant is already in the database
-                else  if(!etName.getText().toString().trim().isEmpty() && !etDaysOne.getText().toString().trim().isEmpty() && !etDaysTwo.getText().toString().trim().isEmpty() &&
+                else  if(!etRestauantName.getText().toString().trim().isEmpty() && !etDaysOne.getText().toString().trim().isEmpty() && !etDaysTwo.getText().toString().trim().isEmpty() &&
                          !etHoursOne.getText().toString().trim().isEmpty() && !etHoursTwo.getText().toString().trim().isEmpty() && !etAddressOne.getText().toString().trim().isEmpty() &&
                          !etZip.getText().toString().trim().isEmpty() && !etPhone.getText().toString().trim().isEmpty() && !etURL.getText().toString().trim().isEmpty())                    {
-                    sqlStatement = "INSERT INTO Restaurants VALUES('" + etName.getText().toString().trim() + "', '" + etDaysOne.getText().toString().trim() + "', '" + etDaysTwo.getText().toString().trim() +
+                    sqlStatement = "INSERT INTO Restaurants VALUES('" + etRestauantName.getText().toString().trim() + "', '" + etDaysOne.getText().toString().trim() + "', '" + etDaysTwo.getText().toString().trim() +
                             "', '" + etHoursOne.getText().toString().trim() + "', '" + etHoursTwo.getText().toString().trim() + "', '" + etAddressOne.getText().toString().trim() +
                             "', '" + etAddressTwo.getText().toString().trim() + "', '" + etCity.getText().toString().trim() + "', '" + etState.getText().toString().trim() +
                             "', '" + etZip.getText().toString().trim() + "', '" + etPhone.getText().toString().trim() + "', '" + etURL.getText().toString().trim() + "', 0, 1, 1);";

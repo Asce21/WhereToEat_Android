@@ -37,4 +37,6 @@
     <string name="upperBound">Upper Bound</string>
     <string name="addRestaraunt">Add A Restaurant</string>
     <string name="submit">Submit</string>
+    <string name="submit_edits">Submit Edits</string>
+    <string name="delete_restaurant">Delete Restaurant</string>
 </resources>

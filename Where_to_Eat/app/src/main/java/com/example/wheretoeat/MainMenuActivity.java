@@ -12,10 +12,7 @@ public class MainMenuActivity extends Activity {
     //Class Variables. RARELY initialize here
     Intent intent;
     String usernamePassed;
-    Button btnViewList;
-    Button btnChooseRestaurant;
-    Button btnAddRestaurant;
-    Button btnRandomNumber;
+    Button btnViewList, btnChooseRestaurant, btnAddRestaurant, btnRandomNumber, btnEditRestaurant;
     SQLiteDatabase wteDatabase;
     Cursor cursor;
 
@@ -31,6 +28,7 @@ public class MainMenuActivity extends Activity {
         btnViewList = (Button) findViewById(R.id.btn_view_list);
         btnChooseRestaurant = (Button) findViewById(R.id.btn_choose_restaurant);
         btnAddRestaurant = (Button) findViewById(R.id.btn_add_restauraunt);
+        btnEditRestaurant = (Button) findViewById(R.id.btn_edit_restaurant);
         btnRandomNumber = (Button) findViewById(R.id.btn_random_number);
 
         btnViewList.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +56,13 @@ public class MainMenuActivity extends Activity {
                 startActivity(intent);
             }//End of method onClick
         });//End of btnAddRestaurant.setOnClickListener
+
+        btnEditRestaurant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }//End of method onClick
+        });//End of btnEditRestaurant.setOnClickListener
 
         btnRandomNumber.setOnClickListener(new View.OnClickListener() {
             @Override

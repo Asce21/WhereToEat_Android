@@ -10,5 +10,5 @@ public class EditRestaurantActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_restaurant);
-    }
-}
+    }//End of method onCreate
+}//End of class EditRestaurantActivity

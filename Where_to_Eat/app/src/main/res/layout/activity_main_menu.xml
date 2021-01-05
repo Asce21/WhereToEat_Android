@@ -85,6 +85,18 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_choose_restaurant" />
 
     <Button
+        android:id="@+id/btn_edit_restaurant"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:text="@string/edit_restaurant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_restauraunt" />
+
+    <Button
         android:id="@+id/btn_random_number"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
@@ -94,7 +106,7 @@
         android:text="@string/random_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_add_restauraunt" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_edit_restaurant" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
