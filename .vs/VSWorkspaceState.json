@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Where_to_Eat"
+    "\\Where_to_Eat",
+    "\\Where_to_Eat\\app",
+    "\\Where_to_Eat\\app\\src",
+    "\\Where_to_Eat\\app\\src\\main",
+    "\\Where_to_Eat\\app\\src\\main\\res",
+    "\\Where_to_Eat\\app\\src\\main\\res\\values"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\Where_to_Eat\\app\\src\\main\\res\\values\\strings.xml",
   "PreviewInSolutionExplorer": false
 }

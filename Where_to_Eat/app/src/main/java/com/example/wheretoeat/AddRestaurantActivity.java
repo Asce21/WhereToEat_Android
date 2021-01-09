@@ -48,13 +48,14 @@ public class AddRestaurantActivity extends Activity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v)    {
-                cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants WHERE Name = " + etRestauantName.getText().toString() + " AND AddressOne = " + etAddressOne.getText().toString() + " AND ;", null);
+                sqlStatement = "SELECT * FROM Restaurants WHERE Name = " + etRestauantName.getText().toString() + " AND AddressOne = " + etAddressOne.getText().toString() + " AND ZipCode = " + etZip.getText().toString() + ";";
+                cursor = wteDatabase.rawQuery(sqlStatement, null);
                 if (cursor.getCount() > 0)  {
                     Toast.makeText(getApplicationContext(), "Restaurant already exists", Toast.LENGTH_SHORT).show();
                 }//End of if statement reached when the restaurant is already in the database
-                else  if(!etRestauantName.getText().toString().trim().isEmpty() && !etDaysOne.getText().toString().trim().isEmpty() && !etDaysTwo.getText().toString().trim().isEmpty() &&
-                         !etHoursOne.getText().toString().trim().isEmpty() && !etHoursTwo.getText().toString().trim().isEmpty() && !etAddressOne.getText().toString().trim().isEmpty() &&
-                         !etZip.getText().toString().trim().isEmpty() && !etPhone.getText().toString().trim().isEmpty() && !etURL.getText().toString().trim().isEmpty())                    {
+                else if(!etRestauantName.getText().toString().trim().isEmpty() && !etDaysOne.getText().toString().trim().isEmpty() && !etHoursOne.getText().toString().trim().isEmpty() &&
+                        !etAddressOne.getText().toString().trim().isEmpty() && !etCity.getText().toString().trim().isEmpty() && !etState.getText().toString().trim().isEmpty() &&
+                        !etZip.getText().toString().trim().isEmpty() && !etPhone.getText().toString().trim().isEmpty() && !etURL.getText().toString().trim().isEmpty())                    {
                     sqlStatement = "INSERT INTO Restaurants VALUES('" + etRestauantName.getText().toString().trim() + "', '" + etDaysOne.getText().toString().trim() + "', '" + etDaysTwo.getText().toString().trim() +
                             "', '" + etHoursOne.getText().toString().trim() + "', '" + etHoursTwo.getText().toString().trim() + "', '" + etAddressOne.getText().toString().trim() +
                             "', '" + etAddressTwo.getText().toString().trim() + "', '" + etCity.getText().toString().trim() + "', '" + etState.getText().toString().trim() +
