@@ -1,3 +1,4 @@
+/*
 package com.example.wheretoeat;
 
 import android.os.Parcel;
@@ -94,8 +95,8 @@ public class AllLists implements Parcelable {
                 dinner = !temp.equals("0");
                 temp = pieces[15];
                 locations = !temp.trim().equals("0");
-                restaurantArrayList.add(new Restaurant( name, daysOne, daysTwo, hoursOne, hoursTwo, addressOne, addressTwo,
-                        city, state, zip, phone, website, breakfast, lunch, dinner, locations));
+                restaurantArrayList.add(new Restaurant( name, daysOne, hoursOne, addressOne, addressTwo,
+                        city, state, zip, phone, website, breakfast, lunch, dinner));
             }//End of the while loop to read the file
         }catch (FileNotFoundException e)    {
             e.printStackTrace();
@@ -108,3 +109,5 @@ public class AllLists implements Parcelable {
 
 
 }//End of class AllLists
+
+ */

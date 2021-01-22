@@ -20,6 +20,7 @@ public class AddRestaurantActivity extends Activity {
     String usernamePassed, sqlStatement;
     EditText etRestauantName, etDaysOne, etDaysTwo, etHoursOne, etHoursTwo, etAddressOne, etAddressTwo, etCity, etState, etZip, etURL, etPhone;
     Button btnSubmit;
+    DatabaseHelper dbh;
 
 
     @Override
@@ -29,6 +30,7 @@ public class AddRestaurantActivity extends Activity {
 
         //Variable Initializations
         SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database.db", MODE_PRIVATE, null);
+        dbh = new DatabaseHelper(AddRestaurantActivity.this);
         intent = getIntent();
         usernamePassed = intent.getStringExtra("username");
         etRestauantName = (EditText) findViewById(R.id.et_restaurant_name);
@@ -56,11 +58,18 @@ public class AddRestaurantActivity extends Activity {
                 else if(!etRestauantName.getText().toString().trim().isEmpty() && !etDaysOne.getText().toString().trim().isEmpty() && !etHoursOne.getText().toString().trim().isEmpty() &&
                         !etAddressOne.getText().toString().trim().isEmpty() && !etCity.getText().toString().trim().isEmpty() && !etState.getText().toString().trim().isEmpty() &&
                         !etZip.getText().toString().trim().isEmpty() && !etPhone.getText().toString().trim().isEmpty() && !etURL.getText().toString().trim().isEmpty())                    {
+                    /*
                     sqlStatement = "INSERT INTO Restaurants VALUES('" + etRestauantName.getText().toString().trim() + "', '" + etDaysOne.getText().toString().trim() + "', '" + etDaysTwo.getText().toString().trim() +
                             "', '" + etHoursOne.getText().toString().trim() + "', '" + etHoursTwo.getText().toString().trim() + "', '" + etAddressOne.getText().toString().trim() +
                             "', '" + etAddressTwo.getText().toString().trim() + "', '" + etCity.getText().toString().trim() + "', '" + etState.getText().toString().trim() +
                             "', '" + etZip.getText().toString().trim() + "', '" + etPhone.getText().toString().trim() + "', '" + etURL.getText().toString().trim() + "', 0, 1, 1);";
                     wteDatabase.execSQL(sqlStatement);
+
+                    dbh.addOneToRestaurants(etRestauantName.getText().toString().trim(), etDaysOne.getText().toString().trim(), etDaysTwo.getText().toString().trim(), etHoursOne.getText().toString().trim(),
+                            etHoursTwo.getText().toString().trim(), etAddressOne.getText().toString().trim(), etAddressTwo.getText().toString().trim(), etCity.getText().toString().trim(),
+                            etState.getText().toString().trim(), etZip.getText().toString().trim(), etPhone.getText().toString().trim(), etURL.getText().toString().trim());
+                     */
+
                 }//End of else clause to add a new restaurant to the list
                 else    {
                     Toast.makeText(getApplicationContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();

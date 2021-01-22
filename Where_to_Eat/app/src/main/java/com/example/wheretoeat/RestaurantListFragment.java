@@ -23,10 +23,12 @@ public class RestaurantListFragment extends androidx.fragment.app.ListFragment {
     ListView lvRestaurants;
     ItemSelected activity;
     Intent intent;
-    SQLiteDatabase wteDatabase;
+    Bundle bundle;
     Cursor cursor;
     ArrayList<String> restaurantNames;
     RestaurantListActivity rla;
+    DatabaseHelper dbh;
+    SQLiteDatabase wteDatabase;
 
     public interface ItemSelected   {
         void onItemSelected(int index);
@@ -47,7 +49,19 @@ public class RestaurantListFragment extends androidx.fragment.app.ListFragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        restaurantNames = getArguments().getStringArrayList("names");
+        dbh = new DatabaseHelper(getActivity());
+        wteDatabase = dbh.getReadableDatabase();
+        restaurantNames = new ArrayList<>(30);
+        cursor = wteDatabase.rawQuery("SELECT * FROM Restaurants ORDER BY Name;", null);
+        if (cursor.moveToFirst()) {
+            do {
+                restaurantNames.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }//End of if statement to populate a list of restaurants
+
+        //restaurantNames = new ArrayList<>(30);
+        //assert getArguments() != null;
+        //restaurantNames = getArguments().getStringArrayList("names");
 
         /*
         rla = (RestaurantListActivity) getActivity();
@@ -63,6 +77,8 @@ public class RestaurantListFragment extends androidx.fragment.app.ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
+        //dbh = new DatabaseHelper(getActivity());
+        //wteDatabase = dbh.getReadableDatabase();
         activity.onItemSelected(position);
     }//End of method onListItemClick
 }//End of fragment RestaurantListFragment
