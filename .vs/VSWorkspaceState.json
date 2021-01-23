@@ -5,9 +5,12 @@
     "\\Where_to_Eat\\app",
     "\\Where_to_Eat\\app\\src",
     "\\Where_to_Eat\\app\\src\\main",
-    "\\Where_to_Eat\\app\\src\\main\\res",
-    "\\Where_to_Eat\\app\\src\\main\\res\\values"
+    "\\Where_to_Eat\\app\\src\\main\\java",
+    "\\Where_to_Eat\\app\\src\\main\\java\\com",
+    "\\Where_to_Eat\\app\\src\\main\\java\\com\\example",
+    "\\Where_to_Eat\\app\\src\\main\\java\\com\\example\\wheretoeat",
+    "\\Where_to_Eat\\app\\src\\main\\res"
   ],
-  "SelectedNode": "\\Where_to_Eat\\app\\src\\main\\res\\values\\strings.xml",
+  "SelectedNode": "\\Where_to_Eat\\app\\src\\main\\java\\com\\example\\wheretoeat\\RestaurantListActivity.java",
   "PreviewInSolutionExplorer": false
 }

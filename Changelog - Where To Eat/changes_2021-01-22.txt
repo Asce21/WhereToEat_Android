@@ -14,3 +14,13 @@ o Added code at the beging of the method onActivityCreated to open and read from
 RestaurantDetailsFragment
 o Deleted the vestigial address text boxes
 o Re-arranged the boxes in the layout
+
+
+changes_2021-01-22_p2
+
+RestaurantListActivity
+o added a title for the layout object mealsServed 
+--- It is in the string mealsS
+
+
+

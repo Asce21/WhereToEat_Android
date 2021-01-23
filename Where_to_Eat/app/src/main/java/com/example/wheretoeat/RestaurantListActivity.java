@@ -100,14 +100,15 @@ public class RestaurantListActivity extends FragmentActivity implements Restaura
                 startActivity(intent3);
             }//End of method onClick
         });//End of btnURL.setOnClickListener
+
+
     }//End of method onCreate
 
-
-/*
     @Override
     protected void onStart() {
         super.onStart();
 
+        /*
         //SQLiteDatabase wteDatabase = openOrCreateDatabase("wte_database", MODE_PRIVATE, null);
         orientation = getResources().getConfiguration().orientation;
         manager = new FragmentActivity().getSupportFragmentManager();
@@ -117,8 +118,8 @@ public class RestaurantListActivity extends FragmentActivity implements Restaura
                     .hide(Objects.requireNonNull(manager.findFragmentById(R.id.details_fragment)))
                     .commit();
         }//End of if statement to hide the details fragment
+         */
     }//End of method onStart
- */
 
     @Override
     public void onItemSelected(int index) {
@@ -159,9 +160,23 @@ public class RestaurantListActivity extends FragmentActivity implements Restaura
 
         fullAddress = allRestaurants.get(index).getAddressOne() + '\n' + (!allRestaurants.get(index).getAddressTwo().isEmpty() ? allRestaurants.get(index).getAddressTwo() + '\n': "") +
                 allRestaurants.get(index).getCity() + ", " + allRestaurants.get(index).getState() + ' ' + allRestaurants.get(index).getZip();
-        mealsS = (allRestaurants.get(index).getBreakfast().equals("T") ? "Breakfast\n" : "") + (allRestaurants.get(index).getLunch().equals("T") ? "Lunch\n" : "") +
+
+        mealsS = "Meals Served:\n";
+        mealsS += (allRestaurants.get(index).getBreakfast().equals("T") ? "Breakfast\n" : "") + (allRestaurants.get(index).getLunch().equals("T") ? "Lunch\n" : "") +
                 (allRestaurants.get(index).getDinner().equals("T") ? "Dinner\n" : "");
 
+        /*
+
+        mealsS = "";
+        if (allRestaurants.get(index).getBreakfast().equals("T"))
+            mealsS += "Breakfast\n";
+
+        if (allRestaurants.get(index).getLunch().equals("T"))
+            mealsS += "Lunch\n";
+
+        if (allRestaurants.get(index).getDinner().equals("T"))
+            mealsS += "Dinner";
+         */
         restaurantName.setText(allRestaurants.get(index).getName());
         daysOpen1.setText(allRestaurants.get(index).getDaysOne());
         hoursOpen1.setText(allRestaurants.get(index).getHoursOne());
